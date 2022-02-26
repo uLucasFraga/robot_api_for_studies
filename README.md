@@ -10,12 +10,13 @@ Repository with examples of automated tests for API (Rest) using the **robotfram
 
 > The **RobotFramework** is a generic open source automation framework. It can be used for test automation and robotic process automation: [GET TO KNOW ROBOT](https://robotframework.org/)
 
-**Note:** The other libs included are for API testing and using fake data.
-[GET TO KNOW ROBOT-REQUESTS](https://github.com/MarketSquare/robotframework-requests#readme)
-[GET TO KNOW FAKER](https://github.com/guykisel/robotframework-faker/blob/master/README.rst)
+**Note:** The other libs included are for API testing and using fake data:
+
+- [GET TO KNOW ROBOT-REQUESTS](https://github.com/MarketSquare/robotframework-requests#readme)
+
+- [GET TO KNOW FAKER](https://github.com/guykisel/robotframework-faker/blob/master/README.rst)
 
 -----------------------
-
 
 ## Context table
 
