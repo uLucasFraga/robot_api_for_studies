@@ -2,6 +2,7 @@
 -----------------------
 
 [![SERVREST API](https://img.shields.io/badge/API-ServeRest-brightgreen)](https://github.com/PauloGoncalvesBH/ServeRest/)
+[![CI](https://github.com/uLucasFraga/robot_api_for_studies/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/uLucasFraga/robot_api_for_studies/actions/)
 
 Repository with examples of automated tests for API (Rest) using the **robotframeworks** and others libs:
 - robot
