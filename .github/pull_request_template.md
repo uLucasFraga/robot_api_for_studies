@@ -1,20 +1,20 @@
-**1. Descrição da tarefa:**
+**1. Task Description:**
 
-- descrever a tarefa se necessário
+- describe the task if necessary
 
-**2. Procedimentos para testar:**
+**2. Testing Procedures:**
 
-- `make run` - escolher o spec necessário
+- `make run` - choose the required spec
 
-**3. Comentários:**
+**3. Comments:**
 
-- escrever um comentário caso seja necessário um maior entendimento
+- write a comment if further understanding is needed
 
-**4. Revisão de checklist:**
+**4. Checklist review:**
 
-- [ ] O nome da branch segue o padrão titulo-da-funcionalidade
-- [ ] O nome do PR segue o padrão [TAREFA] titulo-da-funcionalidade
-- [ ] O PR está assinado por alguém
-- [ ] O PR está com a label correta
-- [ ] O build está verde?
-- [ ] A branch pode ser excluída
+- [ ] The branch name follows the feature-title pattern
+- [ ] PR name follows the pattern [TASK] title-of-feature
+- [ ] The PR is signed by someone
+- [ ] PR has the correct label
+- [ ] Is the build green?
+- [ ] Can the branch be deleted?
