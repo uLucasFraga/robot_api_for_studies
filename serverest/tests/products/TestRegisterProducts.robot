@@ -6,9 +6,9 @@ Force Tags      @register_products
 
 *** Test Cases ***
 Register a valid product successfully
-        [Tags]   @regression
-        Create Data Faker Product
-        Create A Product                ${PRODUCT.nome}  ${PRODUCT.preco}   ${PRODUCT.descricao}  ${PRODUCT.quantidade}
+        [Tags]   @test
+        Get Token
+        Create A Successful Product     
         Should Be Equal As Numbers      ${response.status_code}             201
         Should Be Equal As Strings      ${response.json()["message"]}       ${MSG_PRODUCT_REGISTER_SUCCESS}
         Set Test Variable               ${PRODUCT_ID}   ${response.json()['_id']}
