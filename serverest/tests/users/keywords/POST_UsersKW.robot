@@ -53,10 +53,3 @@ Register Without Submitting Data
 
     Log                     ${response}
     Set Test Variable       ${response}
-
-Register Users Successfully
-    Create Fake Data for Users
-    Register           ${USER.nome}  ${USER.email}  ${USER.password}
-    Should Be Equal As Numbers  ${response.status_code}                     201
-    Should Be Equal As Strings  ${response.json()['message']}               ${MSG_REGISTER_SUCCESS}
-    Set Test Variable           ${_id}   ${response.json()['_id']}

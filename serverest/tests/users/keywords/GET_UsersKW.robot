@@ -5,8 +5,8 @@ Search By All Users
     ${header}=              Create Dictionary
     ...                     content-type=application/json
 
-    Create Session          serveRest                     ${URL_DEV}   verify=True
-    ${response}=            GET Request                   serveRest    /usuarios
+    Create Session          serveRest               ${URL_DEV}   verify=True
+    ${response}=            GET Request             serveRest    /usuarios
     ...                     headers=${header}
 
     Log                     ${response}
