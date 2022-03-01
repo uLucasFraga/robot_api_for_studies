@@ -20,8 +20,8 @@ Search By User
     ${header}=              Create Dictionary
     ...                     content-type=application/json
 
-    Create Session          serveRest                     ${URL_DEV}   verify=True
-    ${response}=            GET Request                   serveRest    /usuarios
+    Create Session          serveRest               ${URL_DEV}   verify=True
+    ${response}=            GET Request             serveRest    /usuarios
     ...                     headers=${header}
     ...                     params=${PARAMS}&${ANOTHER_PARAMS}
 
@@ -36,8 +36,8 @@ Search By User With _ID Via URL
     ${header}=              Create Dictionary
     ...                     content-type=application/json
 
-    Create Session          serveRest                     ${URL_DEV}   verify=True
-    ${response}=            GET Request                   serveRest    /usuarios/${_ID}
+    Create Session          serveRest               ${URL_DEV}   verify=True
+    ${response}=            GET Request             serveRest    /usuarios/${_ID}
     ...                     headers=${header}
     ...                     params=${PARAMS}
 
