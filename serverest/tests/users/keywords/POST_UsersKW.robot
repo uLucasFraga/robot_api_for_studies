@@ -1,6 +1,6 @@
 *** Keywords ***
 Create Fake Data for Users
-    [Documentation]         KW: to perform a fake data creation
+    [Documentation]         KW: to perform a fake data creation.
 
     ${FAKE_NAME}            FakerLibrary.Name
     ${FAKE_EMAIL}           FakerLibrary.Email
@@ -15,7 +15,7 @@ Create Fake Data for Users
     Set Global Variable     ${USER}
 
 Register
-    [Documentation]         KW: to register a user
+    [Documentation]         KW: to register a user.
     [Arguments]             ${NAME}=${EMPTY}
     ...                     ${EMAIL}=${EMPTY}
     ...                     ${PASSWORD}=${EMPTY}
@@ -38,7 +38,7 @@ Register
     Set Test Variable       ${response}
 
 Register Without Submitting Data
-    [Documentation]         KW: to perform a registration without sending data to a user
+    [Documentation]         KW: to perform a registration without sending data to a user.
 
     ${header}=              Create Dictionary
     ...                     content-type=application/json

@@ -15,14 +15,13 @@ Search for a product by name
         [Tags]   @regression
         Search Products By Parameters  nome=${PRODUCT_NAME}
         Should Be Equal As Numbers  ${response.status_code}                     200
-        Should Be Equal As Strings  ${response.json()['quantidade']}            1
         Should Be Equal As Strings  ${response.json()['produtos'][0]['nome']}   ${PRODUCT_NAME}
 
 Search for a product by description
         [Tags]   @regression
         Search Products By Parameters  descricao=${PRODUCT_DESCRIPTION}
         Should Be Equal As Numbers  ${response.status_code}                      200
-        Should Be Equal As Strings  ${response.json()['quantidade']}             1
+        Set Test Variable           ${PRODUCT_DESCRIPTION}                       ${response.json()['produtos'][0]['descricao']}
         Should Be Equal As Strings  ${response.json()['produtos'][0]['descricao']}   ${PRODUCT_DESCRIPTION}
 
 Search for a product by _id
@@ -34,8 +33,10 @@ Search for a product by _id
 
 Search a product by the _id in the URL and a valid name
         [Tags]   @regression
+        Create And Get Product ID
         Search Products By ID in URL  ${PRODUCT_ID}  nome=${PRODUCT_NAME}
         Should Be Equal As Numbers  ${response.status_code}                      200
+        Set Test Variable           ${PRODUCT_NAME}                              ${response.json()['nome']}
         Should Be Equal As Strings  ${response.json()['nome']}                   ${PRODUCT_NAME}
         Should Be Equal As Strings  ${response.json()['_id']}                    ${PRODUCT_ID}
 
@@ -43,6 +44,7 @@ Search a product by _id in URL path
         [Tags]   @regression
         Search Products By ID in URL  ${PRODUCT_ID}  params=${NONE}
         Should Be Equal As Numbers  ${response.status_code}                      200
+        Set Test Variable           ${PRODUCT_NAME}                              ${response.json()['nome']}
         Should Be Equal As Strings  ${response.json()['nome']}                   ${PRODUCT_NAME}
         Should Be Equal As Strings  ${response.json()['_id']}                    ${PRODUCT_ID}
 

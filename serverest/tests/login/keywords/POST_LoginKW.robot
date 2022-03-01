@@ -1,6 +1,6 @@
 *** Keywords ***
 Login
-    [Documentation]         KW: for login
+    [Documentation]         KW: to perform a login.
     [Arguments]             ${EMAIL}     ${PASSWORD}
 
     ${header}=              Create Dictionary

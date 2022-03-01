@@ -1,6 +1,6 @@
 *** Keywords ***
 Delete Register
-    [Documentation]         KW: to delete a user account
+    [Documentation]         KW: to delete a user account.
     [Arguments]             ${_ID}=${EMPTY}
 
     ${header}=              Create Dictionary

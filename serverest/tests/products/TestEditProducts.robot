@@ -7,7 +7,7 @@ Force Tags      @edit_products
 *** Test Cases ***
 Edit a valid product successfully
         [Tags]   @regression
-        Create Faker Product
+        Create Data Faker Product
         Edit An Product                 ${PRODUCT_ID}  Edit ${PRODUCT.nome}  ${PRODUCT.preco}   ${PRODUCT.descricao}  ${PRODUCT.quantidade}
         Should Be Equal As Numbers      ${response.status_code}             200
         Should Be Equal As Strings      ${response.json()["message"]}       ${MSG_REGISTER_CHANGED_SUCCESS}
@@ -26,7 +26,7 @@ Edit a product with a name existent
 
 Edit a non-existing product
         [Tags]   @regression
-        Create Faker Product
+        Create Data Faker Product
         Edit An Product                 ${INVALID_PRODUCT_ID}  New ${PRODUCT.nome}  ${PRODUCT.preco}   ${PRODUCT.descricao}  ${PRODUCT.quantidade}
         Should Be Equal As Numbers      ${response.status_code}              201
         Should Be Equal As Strings      ${response.json()["message"]}        ${MSG_PRODUCT_REGISTER_SUCCESS}
@@ -41,7 +41,7 @@ Edit a product without mandatory fields
         Should Be Equal As Strings      ${response.json()['quantidade']}     ${MSG_PRODUCT_QTD_MUST_BE_NUMBER}
 
 Edit a product without a token
-        [Tags]   @test
+        [Tags]   @regression
         Edit A Product Without A Token  ${PRODUCT_ID}  ${PRODUCT_NAME}  ${PRODUCT_PRICE}  ${PRODUCT_DESCRIPTION}  ${PRODUCT_QTD}
         Should Be Equal As Numbers      ${response.status_code}              401
         Should Be Equal As Strings      ${response.json()['message']}        ${MSG_ERROR_TOKEN}

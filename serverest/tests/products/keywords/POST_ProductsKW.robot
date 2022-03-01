@@ -25,7 +25,7 @@ Create A Product
     Set Test Variable               ${response}
 
 Create A Tokenless Product
-    [Documentation]                 KW: used for register a product without token
+    [Documentation]                 KW: used for register a product without token.
     [Arguments]                     ${PRODUCT_NAME}
     ...                             ${PRODUCT_PRICE}
     ...                             ${PRODUCT_DESCRIPTION}
