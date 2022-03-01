@@ -6,7 +6,7 @@ Force Tags      @register_products
 
 *** Test Cases ***
 Register a valid product successfully
-        [Tags]   @test
+        [Tags]   @regression
         Get Token
         Create A Successful Product     
         Should Be Equal As Numbers      ${response.status_code}             201
