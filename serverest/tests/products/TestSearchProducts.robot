@@ -32,7 +32,8 @@ Search for a product by _id
         Should Be Equal As Strings  ${response.json()['produtos'][0]['_id']}     ${PRODUCT_ID}
 
 Search a product by the _id in the URL and a valid name
-        [Tags]   @regression
+        [Tags]   @error
+        Get Token
         Create A Successful Product 
         Search Products By ID in URL  ${PRODUCT_ID}  nome=${PRODUCT_NAME}
         Should Be Equal As Numbers  ${response.status_code}                      200
