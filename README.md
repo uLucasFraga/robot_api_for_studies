@@ -36,7 +36,7 @@ Repository with examples of automated tests for API (Rest) using the **robotfram
 
 ### Prerequisites
 
-- [node and npm](https://nodejs.org/en/)
+- [python and pip](https://www.python.org/downloads)
 - [vscode or other IDE](https://code.visualstudio.com/download)
 - [robotframework](https://github.com/robotframework/robotframework)
 
