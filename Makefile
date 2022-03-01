@@ -11,4 +11,4 @@ run-serverest:
 	npx serverest -t 600000 -p 3000 >/del/null 2>&1 &
 
 run:
-	robot -d logs .
+	robot -d ./logs -i @regression .

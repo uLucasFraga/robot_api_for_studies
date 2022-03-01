@@ -2,6 +2,7 @@
 Resource   keywords/GET_UsersKW.robot
 Resource   keywords/POST_UsersKW.robot
 Resource   keywords/DELETE_UsersKW.robot
+Resource   ../common/commons.robot
 Resource   ../login/login_base.robot
 Resource   ../base.robot
 
