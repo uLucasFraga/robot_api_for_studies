@@ -19,6 +19,7 @@ ${INVALID_PRICE}                            ERROR_PRICE
 
 ${MSG_PRODUCT_NOT_FOUND}                    Produto não encontrado
 ${MSG_PRODUCT_REGISTER_SUCCESS}             Cadastro realizado com sucesso
+${MSG_REGISTER_CHANGED_SUCCESS}             Registro alterado com sucesso
 ${MSG_PRODUCT_PRICE_INVALID}                preco deve ser um número
 ${MSG_ERROR_PRODUCT_EXISTENT}               Já existe produto com esse nome
 ${MSG_PRODUCT_NAME_CANNOT_BE_BLANK}         nome não pode ficar em branco
