@@ -22,9 +22,8 @@ Create Data Faker Product
     Log                                 ${PRODUCT}
     Set Test Variable                   ${PRODUCT}
 
-Create And Get Product ID
+Create A Successful Product
     [Documentation]                     KW: used to create and get a _id valid product.
-    Get Token
     Create Data Faker Product
     Create A Product                    ${PRODUCT.nome}   ${PRODUCT.preco}   ${PRODUCT.descricao}  ${PRODUCT.quantidade}
     Should Be Equal As Numbers          ${response.status_code}             201
@@ -33,9 +32,10 @@ Create And Get Product ID
     Log                                 ${PRODUCT_ID}
 
 Register Users Successfully
+    [Documentation]                     KW: used to create a valid user.
     Create Fake Data for Users
     Register                            ${USER.nome}  ${USER.email}  ${USER.password}
     Should Be Equal As Numbers          ${response.status_code}             201
     Should Be Equal As Strings          ${response.json()['message']}       ${MSG_REGISTER_SUCCESS}
-    Set Test Variable                   ${_id}   ${response.json()['_id']}
+    Set Test Variable                   ${PRODUCT_ID}                       ${response.json()['_id']}
     Log                                 ${PRODUCT_ID}

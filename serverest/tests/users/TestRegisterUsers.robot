@@ -10,7 +10,7 @@ Register a valid user successfully
         Register           ${USER.nome}  ${USER.email}  ${USER.password}
         Should Be Equal As Numbers  ${response.status_code}                     201
         Should Be Equal As Strings  ${response.json()['message']}               ${MSG_REGISTER_SUCCESS}
-        Set Test Variable           ${_id}   ${response.json()['_id']}
+        Set Test Variable           ${PRODUCT_ID}                               ${response.json()['_id']}
 
 Register a user with an invalid email
         [Tags]   @regression

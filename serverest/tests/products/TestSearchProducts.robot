@@ -33,7 +33,7 @@ Search for a product by _id
 
 Search a product by the _id in the URL and a valid name
         [Tags]   @regression
-        Create And Get Product ID
+        Create A Successful Product 
         Search Products By ID in URL  ${PRODUCT_ID}  nome=${PRODUCT_NAME}
         Should Be Equal As Numbers  ${response.status_code}                      200
         Set Test Variable           ${PRODUCT_NAME}                              ${response.json()['nome']}

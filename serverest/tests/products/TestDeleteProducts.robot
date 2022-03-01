@@ -7,7 +7,7 @@ Force Tags      @delete_products
 *** Test Cases ***
 Delete a valid product successfully
         [Tags]   @regression
-        Create And Get Product ID
+        Create A Successful Product
         Delete A Product                  ${PRODUCT_ID}
 
 Delete a product that doesn't exist
@@ -26,5 +26,5 @@ Delete a product with a cart existent
 Delete a product without a token
         [Tags]   @regression
         Delete A Product Without A Token  ${PRODUCT_ID}
-        Should Be Equal As Numbers        ${response.status_code}              401
-        Should Be Equal As Strings        ${response.json()['message']}        ${MSG_ERROR_TOKEN}
+        Should Be Equal As Numbers        ${response.status_code}                  401
+        Should Be Equal As Strings        ${response.json()['message']}            ${MSG_ERROR_TOKEN}
