@@ -27,6 +27,7 @@ Repository with examples of automated tests for API (Rest) using the **robotfram
   - [Configurations](#configurations)
   - [Installation](#installation)
   - [How to test](#how-to-test)
+  - [Tested endpoints](#tested-endpoints)
   - [Report](#report)
   - [Support](#support)
   - [License](#license)
@@ -91,6 +92,16 @@ $ make install
 ```js
 $ make run
 ```
+
+-----------------------
+
+### Tested endpoints
+
+> All features tested:
+- [x] Login
+- [x] Usuários
+- [x] Produtos
+- [ ] Carrinhos
 
 -----------------------
 
