@@ -1,7 +1,6 @@
 *** Keywords ***
 Create Fake Data for Users
     [Documentation]         KW: to perform a fake data creation.
-
     ${FAKE_NAME}            FakerLibrary.Name
     ${FAKE_EMAIL}           FakerLibrary.Email
     ${FAKE_PASSWORD}        FakerLibrary.Password
@@ -39,7 +38,6 @@ Register
 
 Register Without Submitting Data
     [Documentation]         KW: to perform a registration without sending data to a user.
-
     ${header}=              Create Dictionary
     ...                     content-type=application/json
 
