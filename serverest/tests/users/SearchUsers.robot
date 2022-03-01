@@ -1,7 +1,7 @@
 *** Settings ***
 Resource        user_base.robot
 Documentation   User test suite for serverest API search user
-Force Tags      @search
+Force Tags      @search_users
 
 *** Test Cases ***
 Search for all users successfully
