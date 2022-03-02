@@ -1,33 +1,34 @@
 *** Settings ***
 Resource        product_base.robot
-Documentation   Product test suite for serverest API register products
-Test Setup      Get Token
-Force Tags      @register_products
+Documentation   Product test suite for serverest API create/register products
+Force Tags      @create_products
 
 *** Test Cases ***
 Register a valid product successfully
-        [Tags]   @test
+        [Tags]   @regression
         Get Token
-        Create A Successful Product     
+        Create A Product Successfully
         Should Be Equal As Numbers      ${response.status_code}             201
-        Should Be Equal As Strings      ${response.json()["message"]}       ${MSG_PRODUCT_REGISTER_SUCCESS}
+        Should Be Equal As Strings      ${response.json()["message"]}       ${MSG_REGISTER_SUCCESS}
         Set Test Variable               ${PRODUCT_ID}   ${response.json()['_id']}
-        Log                             ${PRODUCT_ID}
 
+Register an existing product
+        [Tags]   @smoke
+        Get Token
+        Create A Product                ${PRODUCT_NAME}  ${PRODUCT_PRICE}  ${PRODUCT_DESCRIPTION}  ${PRODUCT_QTD}
+        Should Be Equal As Numbers      ${response.status_code}             400
+        Should Be Equal As Strings      ${response.json()['message']}       ${MSG_ERROR_PRODUCT_EXISTENT}
+        
 Register a product with an invalid price
         [Tags]   @regression
+        Get Token
         Create A Product                ${PRODUCT_NAME}  ${INVALID_PRICE}  ${PRODUCT_DESCRIPTION}  ${PRODUCT_QTD}
         Should Be Equal As Numbers      ${response.status_code}             400
         Should Be Equal As Strings      ${response.json()['preco']}         ${MSG_PRODUCT_PRICE_INVALID}
 
-Register an existing product
-        [Tags]   @regression
-        Create A Product                ${PRODUCT_NAME}  ${PRODUCT_PRICE}  ${PRODUCT_DESCRIPTION}  ${PRODUCT_QTD}
-        Should Be Equal As Numbers      ${response.status_code}             400
-        Should Be Equal As Strings      ${response.json()['message']}       ${MSG_ERROR_PRODUCT_EXISTENT}
-
 Register a product without mandatory fields
-        [Tags]   @regression
+        [Tags]   @smoke
+        Get Token
         Create A Product                ${EMPTY}  ${EMPTY}  ${EMPTY}  ${EMPTY}
         Should Be Equal As Numbers      ${response.status_code}             400
         Should Be Equal As Strings      ${response.json()['nome']}          ${MSG_PRODUCT_NAME_CANNOT_BE_BLANK}

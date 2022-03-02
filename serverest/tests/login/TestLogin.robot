@@ -1,6 +1,7 @@
 *** Settings ***
 Resource        login_base.robot
 Documentation   Test suite for serverRest API - /login endpoint
+Force Tags      @login
 
 *** Test Cases ***
 Login successfully

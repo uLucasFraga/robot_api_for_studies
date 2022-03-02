@@ -17,5 +17,5 @@ jobs:
     - name: install dependencies
       run: make install
       
-    - name: run tests
-      run: make run
+    - name: run regression tests
+      run: make run-regression

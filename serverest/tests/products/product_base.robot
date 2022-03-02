@@ -3,6 +3,7 @@ Resource   keywords/GET_ProductsKW.robot
 Resource   keywords/POST_ProductsKW.robot
 Resource   keywords/PUT_ProductsKW.robot
 Resource   keywords/DELETE_ProductsKW.robot
+Resource   ../users/keywords/POST_UsersKW.robot
 Resource   ../products/product_base.robot
 Resource   ../common/commons.robot
 Resource   ../base.robot
@@ -19,7 +20,6 @@ ${INVALID_PRODUCT_ID}                       IDNoNExIsTenT123
 ${INVALID_PRICE}                            ERROR_PRICE
 
 ${MSG_PRODUCT_NOT_FOUND}                    Produto não encontrado
-${MSG_PRODUCT_REGISTER_SUCCESS}             Cadastro realizado com sucesso
 ${MSG_REGISTER_CHANGED_SUCCESS}             Registro alterado com sucesso
 ${MSG_PRODUCT_PRICE_INVALID}                preco deve ser um número
 ${MSG_ERROR_PRODUCT_EXISTENT}               Já existe produto com esse nome
