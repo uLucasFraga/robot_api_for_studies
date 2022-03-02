@@ -4,7 +4,7 @@ Search By All Users
     ${header}=                  Create Dictionary
     ...                         content-type=application/json
 
-    Create Session              serveRest               ${URL_DEV}   verify=True
+    Create Session              serveRest               ${URL_LOCAL}   verify=True
     ${response}=                GET Request             serveRest    /usuarios
     ...                         headers=${header}
 
@@ -19,7 +19,7 @@ Search By User
     ${header}=                  Create Dictionary
     ...                         content-type=application/json
 
-    Create Session              serveRest               ${URL_DEV}   verify=True
+    Create Session              serveRest               ${URL_LOCAL}   verify=True
     ${response}=                GET Request             serveRest    /usuarios
     ...                         headers=${header}
     ...                         params=${PARAMS}&${ANOTHER_PARAMS}
@@ -35,7 +35,7 @@ Search By User With _ID Via URL
     ${header}=                  Create Dictionary
     ...                         content-type=application/json
 
-    Create Session              serveRest               ${URL_DEV}   verify=True
+    Create Session              serveRest               ${URL_LOCAL}   verify=True
     ${response}=                GET Request             serveRest    /usuarios/${_ID}
     ...                         headers=${header}
     ...                         params=${PARAMS}

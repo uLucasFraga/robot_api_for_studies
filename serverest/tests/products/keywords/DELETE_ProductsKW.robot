@@ -7,7 +7,7 @@ Delete A Product
     ...                         content-type=application/json
     ...                         authorization=${TOKEN}
    
-    Create Session              serveRest               ${URL_DEV}   verify=True
+    Create Session              serveRest               ${URL_LOCAL}   verify=True
     ${response}=                DELETE Request          serveRest   /produtos/${PRODUCT_ID}
     ...                         headers=${header}
         
@@ -21,7 +21,7 @@ Delete A Product Without A Token
     ${header}=                  Create Dictionary
     ...                         content-type=application/json
    
-    Create Session              serveRest               ${URL_DEV}   verify=True
+    Create Session              serveRest               ${URL_LOCAL}   verify=True
     ${response}=                DELETE Request          serveRest   /produtos/${PRODUCT_ID}
     ...                         headers=${header}
         

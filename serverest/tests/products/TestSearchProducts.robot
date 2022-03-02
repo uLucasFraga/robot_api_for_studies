@@ -15,6 +15,7 @@ Search for a product by name
         [Tags]   @regression
         Search Products By Parameters  nome=${PRODUCT_NAME}
         Should Be Equal As Numbers  ${response.status_code}                     200
+        Set Test Variable           ${PRODUCT_NAME}                             ${response.json()['produtos'][0]['nome']}
         Should Be Equal As Strings  ${response.json()['produtos'][0]['nome']}   ${PRODUCT_NAME}
 
 Search for a product by description
@@ -34,7 +35,7 @@ Search for a product by _id
 Search a product by the _id in the URL and a valid name
         [Tags]   @regression
         Get Token
-        Create A Successful Product 
+        Create A Product Successfully 
         Search Products By ID in URL  ${PRODUCT_ID}  nome=${PRODUCT_NAME}
         Should Be Equal As Numbers  ${response.status_code}                      200
         Set Test Variable           ${PRODUCT_NAME}                              ${response.json()['nome']}

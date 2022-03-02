@@ -1,49 +1,47 @@
 *** Keywords ***
-Create A Product
-    [Documentation]                 KW: used for register a product.
-    [Arguments]                     ${PRODUCT_NAME}
-    ...                             ${PRODUCT_PRICE}
-    ...                             ${PRODUCT_DESCRIPTION}
-    ...                             ${QTD}                
+Create A Cart
+    [Documentation]                 KW: used to create a cart.
+    [Arguments]                     ${PRODUCT_ID}=${EMPTY}
    
     ${header}=                      Create Dictionary
     ...                             content-type=application/json
     ...                             authorization=${TOKEN}
 
-    ${body}=                        Create Dictionary
-    ...                             nome=${PRODUCT_NAME}
-    ...                             preco=${PRODUCT_PRICE}
-    ...                             descricao=${PRODUCT_DESCRIPTION}
-    ...                             quantidade=${QTD}
+    ${product}                      Create Dictionary
+    ...                             idProduto=${PRODUCT_ID}
+    ...                             quantidade=1
+    ${product_list}=                Create List         ${product}
 
-    Create Session                  serveRest               ${URL_DEV}   verify=True
-    ${response}=                    POST Request            serveRest   /produtos
+    ${body}                         Create Dictionary
+    ...                             produtos=${product_list}
+
+    Create Session                  serveRest           ${URL_LOCAL}   
+    ${response}=                    POST Request        serveRest   /carrinhos
     ...                             headers=${header}
     ...                             json=${body}
     
     Log                             ${response}
     Set Test Variable               ${response}
 
-Create A Tokenless Product
-    [Documentation]                 KW: used for register a product without token.
-    [Arguments]                     ${PRODUCT_NAME}
-    ...                             ${PRODUCT_PRICE}
-    ...                             ${PRODUCT_DESCRIPTION}
-    ...                             ${QTD}                
+Create A Tokenless Cart
+    [Documentation]                 KW: used to create a cart without token.
+    [Arguments]                     ${PRODUCT_ID}=${EMPTY}
    
     ${header}=                      Create Dictionary
     ...                             content-type=application/json
-    
-    ${body}=                        Create Dictionary
-    ...                             nome=${PRODUCT_NAME}
-    ...                             preco=${PRODUCT_PRICE}
-    ...                             descricao=${PRODUCT_DESCRIPTION}
-    ...                             quantidade=${QTD}
 
-    Create Session                  serveRest               ${URL_DEV}   verify=True
-    ${response}=                    POST request            serveRest   /produtos
+    ${product}                      Create Dictionary
+    ...                             idProduto=${PRODUCT_ID}
+    ...                             quantidade=1
+    ${product_list}=                Create List         ${product}
+
+    ${body}                         Create Dictionary
+    ...                             produtos=${product_list}
+
+    Create Session                  serveRest           ${URL_LOCAL}   
+    ${response}=                    POST Request        serveRest   /carrinhos
     ...                             headers=${header}
     ...                             json=${body}
     
     Log                             ${response}
-    Set Test Variable               ${response}    
+    Set Test Variable               ${response}  

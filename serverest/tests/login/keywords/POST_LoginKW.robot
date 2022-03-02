@@ -10,7 +10,7 @@ Login
     ...                     email=${EMAIL}
     ...                     password=${PASSWORD}
 
-    Create Session          serveRest               ${URL_DEV}   verify=True
+    Create Session          serveRest               ${URL_LOCAL}   verify=True
     ${response}=            POST Request            serveRest    /login
     ...                     headers=${header}
     ...                     json=${body}

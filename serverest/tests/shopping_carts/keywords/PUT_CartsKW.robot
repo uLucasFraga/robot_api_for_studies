@@ -17,7 +17,7 @@ Edit An Product
     ...                             descricao=${PRODUCT_DESCRIPTION}
     ...                             quantidade=${QTD}
 
-    Create Session                  serveRest               ${URL_DEV}   verify=True
+    Create Session                  serveRest               ${URL_LOCAL}   verify=True
     ${response}=                    PUT Request             serveRest   /produtos/${PRODUCT_ID}
     ...                             headers=${header}
     ...                             json=${body}
@@ -42,7 +42,7 @@ Edit A Product Without A Token
     ...                             descricao=${PRODUCT_DESCRIPTION}
     ...                             quantidade=${QTD}
 
-    Create Session                  serveRest               ${URL_DEV}   verify=True
+    Create Session                  serveRest               ${URL_LOCAL}   verify=True
     ${response}=                    PUT Request             serveRest   /produtos/${PRODUCT_ID}
     ...                             headers=${header}
     ...                             json=${body}

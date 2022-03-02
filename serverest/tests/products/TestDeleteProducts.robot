@@ -7,7 +7,7 @@ Force Tags      @delete_products
 *** Test Cases ***
 Delete a valid product successfully
         [Tags]   @regression
-        Create A Successful Product
+        Create A Product Successfully
         Delete A Product                  ${PRODUCT_ID}
 
 Delete a product that doesn't exist
