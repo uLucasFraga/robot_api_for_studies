@@ -87,10 +87,10 @@ $ cd /robot_api_for_studies && make install
 $ make install
 ```
 
-> To run all the tests
+> To run all regression tests
 
 ```js
-$ make run
+$ make run-regression
 ```
 
 -----------------------
@@ -101,7 +101,7 @@ $ make run
 - [x] Login
 - [x] Usuários
 - [x] Produtos
-- [ ] Carrinhos
+- [x] Carrinhos
 
 -----------------------
 
@@ -110,7 +110,7 @@ $ make run
 > To generate reports:
 
 ```js
-$ make run
+$ make run-regression
 ```
 
 > To generate reports without the _makefile_ command:
