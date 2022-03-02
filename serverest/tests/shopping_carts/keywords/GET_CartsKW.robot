@@ -4,8 +4,8 @@ Search For All Carts
     ${header}=                  Create Dictionary
     ...                         content-type=application/json
    
-    Create Session              serveRest           ${URL_DEV}erify=True
-    ${response}=                GET Request         serveRest   /carrinhos
+    Create Session              serveRest           ${URL_DEV}      verify=True
+    ${response}=                GET Request         serveRest       /carrinhos
     ...                         headers=${header}
     
     Log                         ${response}
@@ -19,8 +19,8 @@ Search Carts By Parameters
     ${header}=                  Create Dictionary
     ...                         content-type=application/json
    
-    Create Session              serveRest           ${URL_DEV}erify=True
-    ${response}=                GET Request         serveRest   /carrinhos
+    Create Session              serveRest           ${URL_DEV}      verify=True
+    ${response}=                GET Request         serveRest       /carrinhos
     ...                         headers=${header}
     ...                         params=${PARAMS}&${ANOTHER_PARAMS}
     
@@ -35,8 +35,8 @@ Search Carts By ID in URL
     ${header}=                  Create Dictionary
     ...                         content-type=application/json
    
-    Create Session              serveRest           ${URL_DEV}erify=True
-    ${response}=                GET Request         serveRest   /carrinhos/${CART_ID}
+    Create Session              serveRest           ${URL_DEV}      verify=True
+    ${response}=                GET Request         serveRest       /carrinhos/${CART_ID}
     ...                         headers=${header}
     ...                         params=${PARAMS}
     

@@ -50,6 +50,7 @@ Create A Users Successfully
 Create A Product Successfully
     [Documentation]                     KW: used to create and get a _id valid product.
     Create Data Faker For Product
+    Get Token
     Create A Product                    ${PRODUCT.nome}   ${PRODUCT.preco}   ${PRODUCT.descricao}  ${PRODUCT.quantidade}
     Should Be Equal As Numbers          ${response.status_code}                 201
     Should Be Equal As Strings          ${response.json()["message"]}           ${MSG_REGISTER_SUCCESS}

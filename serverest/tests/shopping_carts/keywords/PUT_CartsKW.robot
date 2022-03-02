@@ -1,6 +1,6 @@
 *** Keywords ***
-Edit An Product
-    [Documentation]                 KW: used for to edit a product existent.
+Edit A Cart
+    [Documentation]                 KW: used for to edit a carts existents.
     [Arguments]                     ${PRODUCT_ID}
     ...                             ${PRODUCT_NAME}
     ...                             ${PRODUCT_PRICE}
@@ -17,16 +17,16 @@ Edit An Product
     ...                             descricao=${PRODUCT_DESCRIPTION}
     ...                             quantidade=${QTD}
 
-    Create Session                  serveRest               ${URL_DEV}ify=True
-    ${response}=                    PUT Request             serveRest   /produtos/${PRODUCT_ID}
+    Create Session                  serveRest               ${URL_DEV}      verify=True
+    ${response}=                    PUT Request             serveRest       /produtos/${PRODUCT_ID}
     ...                             headers=${header}
     ...                             json=${body}
     
     Log                             ${response}
     Set Test Variable               ${response}
 
-Edit A Product Without A Token
-    [Documentation]                 KW: used for to edit a product non-existent.
+Edit A Cart Without A Token
+    [Documentation]                 KW: used for to edit a carts non-existents.
     [Arguments]                     ${PRODUCT_ID}
     ...                             ${PRODUCT_NAME}
     ...                             ${PRODUCT_PRICE}
@@ -42,8 +42,8 @@ Edit A Product Without A Token
     ...                             descricao=${PRODUCT_DESCRIPTION}
     ...                             quantidade=${QTD}
 
-    Create Session                  serveRest               ${URL_DEV}ify=True
-    ${response}=                    PUT Request             serveRest   /produtos/${PRODUCT_ID}
+    Create Session                  serveRest               ${URL_DEV}      verify=True
+    ${response}=                    PUT Request             serveRest       /produtos/${PRODUCT_ID}
     ...                             headers=${header}
     ...                             json=${body}
     

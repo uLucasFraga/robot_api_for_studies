@@ -1,5 +1,5 @@
 *** Keywords ***
-Edit An Product
+Edit A Product
     [Documentation]                 KW: used for to edit a product existent.
     [Arguments]                     ${PRODUCT_ID}
     ...                             ${PRODUCT_NAME}
@@ -17,8 +17,8 @@ Edit An Product
     ...                             descricao=${PRODUCT_DESCRIPTION}
     ...                             quantidade=${QTD}
 
-    Create Session                  serveRest               ${URL_DEV}y=True
-    ${response}=                    PUT Request             serveRest   /produtos/${PRODUCT_ID}
+    Create Session                  serveRest               ${URL_DEV}      verify=True
+    ${response}=                    PUT Request             serveRest       /produtos/${PRODUCT_ID}
     ...                             headers=${header}
     ...                             json=${body}
     
@@ -42,8 +42,8 @@ Edit A Product Without A Token
     ...                             descricao=${PRODUCT_DESCRIPTION}
     ...                             quantidade=${QTD}
 
-    Create Session                  serveRest               ${URL_DEV}y=True
-    ${response}=                    PUT Request             serveRest   /produtos/${PRODUCT_ID}
+    Create Session                  serveRest               ${URL_DEV}      verify=True
+    ${response}=                    PUT Request             serveRest       /produtos/${PRODUCT_ID}
     ...                             headers=${header}
     ...                             json=${body}
     
