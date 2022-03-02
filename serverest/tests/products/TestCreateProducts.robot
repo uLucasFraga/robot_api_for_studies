@@ -6,6 +6,7 @@ Force Tags      @create_products
 *** Test Cases ***
 Register a valid product successfully
         [Tags]   @regression
+        Get Token
         Create A Product Successfully
         Should Be Equal As Numbers      ${response.status_code}             201
         Should Be Equal As Strings      ${response.json()["message"]}       ${MSG_REGISTER_SUCCESS}
