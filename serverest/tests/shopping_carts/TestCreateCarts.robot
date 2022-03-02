@@ -6,13 +6,14 @@ Force Tags      @create_carts
 *** Test Cases ***
 Create a valid cart successfully
         [Tags]   @regression
+        Get Token
         Create A Cart Successfully
         Should Be Equal As Numbers      ${response.status_code}             201
         Should Be Equal As Strings      ${response.json()['message']}       ${MSG_REGISTER_SUCCESS}
         Set Test Variable               ${CART_ID}                          ${response.json()['_id']}
 
 Create a cart with an invalid _id
-        [Tags]   @regression
+        [Tags]   @smoke
         Create A Users Successfully
         Get Token
         Create A Product Successfully
@@ -28,7 +29,7 @@ Create an existing cart
         Should Be Equal As Strings      ${response.json()['message']}       ${MSG_CART_NOT_ALLOWED}
 
 Create a cart without mandatory fields
-        [Tags]   @regression
+        [Tags]   @smoke
         Create A Users Successfully
         Get Token
         Create A Product Successfully

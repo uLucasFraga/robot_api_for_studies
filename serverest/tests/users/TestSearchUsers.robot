@@ -33,7 +33,7 @@ Search for a user by _id
         Should Be Equal As Strings  ${response.json()['usuarios'][0]['_id']}     ${_ID}
 
 Search a user by the _id in the URL and a valid name
-        [Tags]   @regression
+        [Tags]   @smoke
         Search By User With _ID Via URL  ${_ID}  nome=${NAME}
         Should Be Equal As Numbers  ${response.status_code}                      200
         Should Be Equal As Strings  ${response.json()['nome']}                   ${NAME}
@@ -47,7 +47,7 @@ Search a user by _id in the URL path
         Should Be Equal As Strings  ${response.json()['_id']}                    ${_ID}
 
 Search for a user by non-existent name and a valid _id
-        [Tags]   @regression
+        [Tags]   @smoke
         Search By User  nome=${NONEXISTENT_NAME}  _id=${_ID}
         Should Be Equal As Numbers  ${response.status_code}                      200
         Should Be Equal As Strings  ${response.json()['quantidade']}             0

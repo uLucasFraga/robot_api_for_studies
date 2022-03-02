@@ -17,5 +17,11 @@ jobs:
     - name: install dependencies
       run: make install
       
-    - name: run tests
-      run: make run-all
+    - name: run login tests
+      run: make run-login
+    - name: run users tests
+      run: make run-users
+    - name: run products tests
+      run: make run-products
+    - name: run carts tests
+      run: make run-carts

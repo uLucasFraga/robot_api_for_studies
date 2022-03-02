@@ -20,7 +20,7 @@ Edit a product with an invalid price
         Should Be Equal As Strings      ${response.json()['preco']}          ${MSG_PRODUCT_PRICE_INVALID}
 
 Edit a product with a name existent
-        [Tags]   @regression
+        [Tags]   @smoke
         Create Data Faker For Product
         Get Token
         Edit A Product                  ${PRODUCT_ID}  ${PRODUCT.nome}  ${PRODUCT.preco}   ${PRODUCT.descricao}  ${PRODUCT.quantidade} 
@@ -29,7 +29,7 @@ Edit a product with a name existent
         Should Be Equal As Strings      ${response.json()["message"]}        ${MSG_ERROR_PRODUCT_EXISTENT}
 
 Edit a non-existing product
-        [Tags]   @regression
+        [Tags]   @smoke
         Create Data Faker For Product
         Get Token
         Edit A Product                  ${INVALID_PRODUCT_ID}  ${PRODUCT.nome}  ${PRODUCT_PRICE}  ${PRODUCT_DESCRIPTION}  ${PRODUCT_QTD}
@@ -38,7 +38,7 @@ Edit a non-existing product
         Set Global Variable             ${PRODUCT}
 
 Edit a product without mandatory fields
-        [Tags]   @regression
+        [Tags]   @smoke
         Get Token
         Edit A Product                  ${PRODUCT_ID}  ${EMPTY}  ${EMPTY}  ${EMPTY}  ${EMPTY}
         Should Be Equal As Numbers      ${response.status_code}              400

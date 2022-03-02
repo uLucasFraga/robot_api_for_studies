@@ -33,7 +33,7 @@ Search for a product by _id
         Should Be Equal As Strings  ${response.json()['produtos'][0]['_id']}     ${PRODUCT_ID}
 
 Search a product by the _id in the URL and a valid name
-        [Tags]   @regression
+        [Tags]   @smoke
         Get Token
         Create A Product Successfully 
         Search Products By ID in URL  ${PRODUCT_ID}  nome=${PRODUCT_NAME}

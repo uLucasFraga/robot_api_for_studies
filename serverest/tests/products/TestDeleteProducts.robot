@@ -6,20 +6,19 @@ Force Tags      @delete_products
 *** Test Cases ***
 Delete a valid product successfully
         [Tags]   @regression
-        Create Data Faker For Product
         Get Token
-        Create A Product                  ${PRODUCT.nome}   ${PRODUCT.preco}   ${PRODUCT.descricao}  ${PRODUCT.quantidade}
+        Create A Product Successfully
         Delete A Product                  ${PRODUCT_ID}
 
 Delete a product that doesn't exist
-        [Tags]   @regression
+        [Tags]   @smoke
         Get Token
         Delete A Product                  ${INVALID_PRODUCT_ID}
         Should Be Equal As Numbers        ${response.status_code}                 200
         Should Be Equal As Strings        ${response.json()['message']}           ${MSG_NO_REGISTER_REMOVED}
 
 Delete a product with a cart existent
-        [Tags]   @regression
+        [Tags]   @smoke
         Get Token
         Delete A Product                  ${PRODUCT_ID}
         Should Be Equal As Numbers        ${response.status_code}                 400

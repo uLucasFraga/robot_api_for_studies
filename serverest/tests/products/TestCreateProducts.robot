@@ -6,15 +6,13 @@ Force Tags      @create_products
 *** Test Cases ***
 Register a valid product successfully
         [Tags]   @regression
-        Create Data Faker For Product
-        Get Token
-        Create A Product                ${PRODUCT.nome}   ${PRODUCT.preco}   ${PRODUCT.descricao}  ${PRODUCT.quantidade}
+        Create A Product Successfully
         Should Be Equal As Numbers      ${response.status_code}             201
         Should Be Equal As Strings      ${response.json()["message"]}       ${MSG_REGISTER_SUCCESS}
         Set Test Variable               ${PRODUCT_ID}   ${response.json()['_id']}
 
 Register an existing product
-        [Tags]   @regression
+        [Tags]   @smoke
         Get Token
         Create A Product                ${PRODUCT_NAME}  ${PRODUCT_PRICE}  ${PRODUCT_DESCRIPTION}  ${PRODUCT_QTD}
         Should Be Equal As Numbers      ${response.status_code}             400
@@ -28,7 +26,7 @@ Register a product with an invalid price
         Should Be Equal As Strings      ${response.json()['preco']}         ${MSG_PRODUCT_PRICE_INVALID}
 
 Register a product without mandatory fields
-        [Tags]   @regression
+        [Tags]   @smoke
         Get Token
         Create A Product                ${EMPTY}  ${EMPTY}  ${EMPTY}  ${EMPTY}
         Should Be Equal As Numbers      ${response.status_code}             400

@@ -19,7 +19,7 @@ Register a user with an invalid email
         Should Be Equal As Strings  ${response.json()['email']}                 ${MSG_INVALID_EMAIL}
 
 Register a user with an existing email
-        [Tags]   @regression
+        [Tags]   @smoke
         Register           ${NAME}  ${EMAIL}  ${PASSWORD}
         Should Be Equal As Numbers  ${response.status_code}                     400
         Should Be Equal As Strings  ${response.json()['message']}               ${MSG_EMAIL_DUPLICATE}
