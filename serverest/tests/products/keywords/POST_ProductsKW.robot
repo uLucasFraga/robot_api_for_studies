@@ -16,7 +16,7 @@ Create A Product
     ...                             descricao=${PRODUCT_DESCRIPTION}
     ...                             quantidade=${QTD}
 
-    Create Session                  serveRest               ${URL_LOCAL}   verify=True
+    Create Session                  serveRest               ${URL_DEV}erify=True
     ${response}=                    POST Request            serveRest   /produtos
     ...                             headers=${header}
     ...                             json=${body}
@@ -40,7 +40,7 @@ Create A Tokenless Product
     ...                             descricao=${PRODUCT_DESCRIPTION}
     ...                             quantidade=${QTD}
 
-    Create Session                  serveRest               ${URL_LOCAL}   verify=True
+    Create Session                  serveRest               ${URL_DEV}erify=True
     ${response}=                    POST request            serveRest   /produtos
     ...                             headers=${header}
     ...                             json=${body}

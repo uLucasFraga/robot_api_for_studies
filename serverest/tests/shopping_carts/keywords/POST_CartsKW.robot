@@ -15,7 +15,7 @@ Create A Cart
     ${body}                         Create Dictionary
     ...                             produtos=${product_list}
 
-    Create Session                  serveRest           ${URL_LOCAL}   
+    Create Session                  serveRest           ${URL_DEV}
     ${response}=                    POST Request        serveRest   /carrinhos
     ...                             headers=${header}
     ...                             json=${body}
@@ -38,7 +38,7 @@ Create A Tokenless Cart
     ${body}                         Create Dictionary
     ...                             produtos=${product_list}
 
-    Create Session                  serveRest           ${URL_LOCAL}   
+    Create Session                  serveRest           ${URL_DEV}
     ${response}=                    POST Request        serveRest   /carrinhos
     ...                             headers=${header}
     ...                             json=${body}

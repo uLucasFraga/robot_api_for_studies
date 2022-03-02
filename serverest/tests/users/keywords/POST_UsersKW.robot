@@ -14,7 +14,7 @@ Register
     ...                         password=${PASSWORD}
     ...                         administrador=true
 
-    Create Session              serveRest               ${URL_LOCAL}   verify=True
+    Create Session              serveRest               ${URL_DEV}ify=True
     ${response}=                POST Request            serveRest    /usuarios
     ...                         headers=${header}
     ...                         json=${body}
@@ -30,7 +30,7 @@ Register Without Submitting Data
     ${body}=                    Create Dictionary
     ...                         administrador=true
 
-    Create Session              serveRest               ${URL_LOCAL}   verify=True
+    Create Session              serveRest               ${URL_DEV}ify=True
     ${response}=                POST Request            serveRest    /usuarios
     ...                         headers=${header}
     ...                         json=${body}

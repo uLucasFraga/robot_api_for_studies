@@ -6,7 +6,7 @@ Delete Register
     ${header}=              Create Dictionary
     ...                     content-type=application/json
 
-    Create Session          serveRest               ${URL_LOCAL}   verify=True
+    Create Session          serveRest               ${URL_DEV} verify=True
     ${response}=            DELETE Request          serveRest    /usuarios/${PRODUCT_ID}
     ...                     headers=${header}
 
