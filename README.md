@@ -98,10 +98,10 @@ $ make run-regression
 ### Tested endpoints
 
 > All features tested:
-- [x] Login
-- [x] Usuários
-- [x] Produtos
-- [x] Carrinhos
+- [ ] Login
+- [ ] Usuários
+- [ ] Produtos
+- [ ] Carrinhos
 
 -----------------------
 
